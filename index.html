@@ -15,11 +15,88 @@
       integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="css/styles.css" />
 
     <title>To Do Final</title>
   </head>
   <body>
     <h1>Todo Project</h1>
+
+    <table class="table table-bordered container jumbotron w-25">
+      <tbody>
+        <tr>
+          <td>Grocery Run</td>
+        </tr>
+        <tr>
+          <td>Oil Change</td>
+        </tr>
+        <tr>
+          <td>Workout</td>
+        </tr>
+        <tr>
+          <td>Gardening</td>
+        </tr>
+        <tr>
+          <td>BS assignment</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- BEGIN ADD FORM -->
+    <div class="container jumbotron w-50">
+      <form>
+        <div class="form-group">
+          <label for="exampleFormControlInput1">Task Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="taskName"
+            placeholder="Grocery List"
+          />
+        </div>
+        <div class="form-group">
+          <label for="exampleFormControlInput1">Task Description</label>
+          <input
+            type="text"
+            class="form-control"
+            id="taskDescription"
+            placeholder="Apples, tomatoes, etc..."
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="exampleFormControlInput1">Assigned To:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="taskAssign"
+            placeholder="Bill Gates"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="exampleFormControlSelect1">Status</label>
+          <select class="form-control" id="taskStatus">
+            <option>Incomplete</option>
+            <option>In Progress</option>
+            <option>Completed</option>
+            <option>Too Lazy To Do It</option>
+            >
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="exampleFormControlInput1">Due Date</label>
+          <input
+            type="text"
+            class="form-control"
+            id="taskDue"
+            placeholder="15/12/2021"
+          />
+        </div>
+      </form>
+    </div>
+
+    <!-- END ADD FORM  -->
 
     <!-- Optional JavaScript; choose one of the two! -->
 
