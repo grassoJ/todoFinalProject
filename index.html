@@ -22,10 +22,116 @@
   <body>
     <h1>Todo Project</h1>
 
+    <div class="accordion container w-50 mb-5" id="accordionExample">
+      <div class="card">
+        <div class="card-header" id="headingOne">
+          <h2 class="mb-0">
+            <button
+              class="btn btn-link"
+              type="button"
+              data-toggle="collapse"
+              data-target="#collapseOne"
+              aria-expanded="true"
+              aria-controls="collapseOne"
+            >
+              Go to zoo
+            </button>
+          </h2>
+        </div>
+
+        <div
+          id="collapseOne"
+          class="collapse show"
+          aria-labelledby="headingOne"
+          data-parent="#accordionExample"
+        >
+          <div class="card-body">
+            <p>Assigned To: Musharraf</p>
+            <p>Status: In Process</p>
+            <p>Details: Go to the zoo and laugh at the monkeys</p>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header" id="headingTwo">
+          <h2 class="mb-0">
+            <button
+              class="btn btn-link collapsed"
+              type="button"
+              data-toggle="collapse"
+              data-target="#collapseTwo"
+              aria-expanded="false"
+              aria-controls="collapseTwo"
+            >
+              Make Todo App
+            </button>
+          </h2>
+        </div>
+        <div
+          id="collapseTwo"
+          class="collapse"
+          aria-labelledby="headingTwo"
+          data-parent="#accordionExample"
+        >
+          <div class="card-body">
+            <p>Assinged To: Musharraf</p>
+            <p>Status: In Progress</p>
+            <p>Due: 04/01/1010</p>
+            <p>
+              Call James, hash out the details and make an awesome application
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header" id="headingThree">
+          <h2 class="mb-0">
+            <button
+              class="btn btn-link collapsed"
+              type="button"
+              data-toggle="collapse"
+              data-target="#collapseThree"
+              aria-expanded="false"
+              aria-controls="collapseThree"
+            >
+              Make Biriyani
+            </button>
+          </h2>
+        </div>
+        <div
+          id="collapseThree"
+          class="collapse"
+          aria-labelledby="headingThree"
+          data-parent="#accordionExample"
+        >
+          <div class="card-body">
+            <p>Assinged To: Musharraf</p>
+            <p>Status: Incomplete</p>
+            <p>Due: 10/12/2020</p>
+            <p>
+              Get the mutton, get the chili, chuck it the oven and make it very
+              spicy!
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- old table Start
     <table class="table table-bordered container jumbotron w-25">
       <tbody>
         <tr>
-          <td>Grocery Run</td>
+          <td
+            class="btn btn-primary dropdown-toggle"
+            type="button"
+            data-toggle="dropdown"
+          >
+            <ul>
+                <li>Name:</li>
+
+            </ul>
+            Grocery Run
+          </td>
         </tr>
         <tr>
           <td>Oil Change</td>
@@ -41,6 +147,8 @@
         </tr>
       </tbody>
     </table>
+
+    old table end -->
 
     <!-- BEGIN ADD FORM -->
     <div class="container jumbotron w-50">
