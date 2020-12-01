@@ -1,0 +1,10 @@
+h1 {
+  text-align: center;
+  margin-bottom: 50px;
+  margin-top: 150px;
+}
+
+#taskList {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin-bottom: 200px;
+}
