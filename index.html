@@ -21,101 +21,219 @@
   </head>
   <body>
     <h1>Todo Project</h1>
-    
-    <div class="accordion container w-50 mb-5" id="accordionExample">
-      <div class="card">
-        <div class="card-header" id="headingOne">
-          <h2 class="mb-0">
-            <button
-              class="btn btn-link"
-              type="button"
-              data-toggle="collapse"
-              data-target="#collapseOne"
-              aria-expanded="true"
-              aria-controls="collapseOne"
-            >
-              Go to zoo
-            </button>
-          </h2>
-        </div>
 
-        <div
-          id="collapseOne"
-          class="collapse show"
-          aria-labelledby="headingOne"
-          data-parent="#accordionExample"
-        >
-          <div class="card-body">
-            <p>Assigned To: Musharraf</p>
-            <p>Status: In Process</p>
-            <p>Details: Go to the zoo and laugh at the monkeys</p>
+    <h2>12/9 jam2 branch</h2>
+    <div class="container jumbotron">
+      <!-- START MODAL FOR ADD BUTTON -->
+
+      <!-- Button trigger modal -->
+      <button
+        type="button"
+        class="btn btn-primary mb-5"
+        data-toggle="modal"
+        data-target="#exampleModal"
+      >
+        ADD TASK
+      </button>
+
+      <!-- Modal -->
+      <div
+        class="modal fade"
+        id="exampleModal"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <!-- BEGIN ADD FORM -->
+              <div class="container jumbotron w-50">
+                <form>
+                  <div class="form-group">
+                    <label for="exampleFormControlInput1">Task Name</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="taskName"
+                      placeholder="Grocery List"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleFormControlInput1"
+                      >Task Description</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="taskDescription"
+                      placeholder="Apples, tomatoes, etc..."
+                    />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="exampleFormControlInput1">Assigned To:</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="taskAssign"
+                      placeholder="Bill Gates"
+                    />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="exampleFormControlSelect1">Status</label>
+                    <select class="form-control" id="taskStatus">
+                      <option>Incomplete</option>
+                      <option>In Progress</option>
+                      <option>Completed</option>
+                      <option>Too Lazy To Do It</option>
+                      >
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleFormControlInput1">Due Date</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="taskDue"
+                      placeholder="15/12/2021"
+                    />
+                  </div>
+                </form>
+              </div>
+
+              <!-- END ADD FORM  -->
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-dismiss="modal"
+              >
+                Close
+              </button>
+              <button type="button" class="btn btn-primary">
+                Save changes
+              </button>
+            </div>
           </div>
         </div>
       </div>
-      <div class="card">
-        <div class="card-header" id="headingTwo">
-          <h2 class="mb-0">
-            <button
-              class="btn btn-link collapsed"
-              type="button"
-              data-toggle="collapse"
-              data-target="#collapseTwo"
-              aria-expanded="false"
-              aria-controls="collapseTwo"
-            >
-              Make Todo App
-            </button>
-          </h2>
-        </div>
-        <div
-          id="collapseTwo"
-          class="collapse"
-          aria-labelledby="headingTwo"
-          data-parent="#accordionExample"
-        >
-          <div class="card-body">
-            <p>Assinged To: Musharraf</p>
-            <p>Status: In Progress</p>
-            <p>Due: 04/01/1010</p>
-            <p>
-              Call James, hash out the details and make an awesome application
-            </p>
+
+      <!-- END MODAL FOR ADD BUTTON -->
+
+      <!-- //START ACCORDIAN  -->
+      <div class="accordion container w-50 mb-5" id="accordionExample">
+        <div class="card">
+          <div class="card-header" id="headingOne">
+            <h2 class="mb-0">
+              <button
+                class="btn btn-link"
+                type="button"
+                data-toggle="collapse"
+                data-target="#collapseOne"
+                aria-expanded="true"
+                aria-controls="collapseOne"
+              >
+                Go to zoo
+              </button>
+              <button class="btn btn-danger float-right">Deletes</button>
+              <button class="btn btn-info float-right mr-2">Edit</button>
+            </h2>
+          </div>
+
+          <div
+            id="collapseOne"
+            class="collapse show"
+            aria-labelledby="headingOne"
+            data-parent="#accordionExample"
+          >
+            <div class="card-body">
+              <p>Assigned To: Musharraf</p>
+              <p>Status: In Process</p>
+              <p>Details: Go to the zoo and laugh at the monkeys</p>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="card">
-        <div class="card-header" id="headingThree">
-          <h2 class="mb-0">
-            <button
-              class="btn btn-link collapsed"
-              type="button"
-              data-toggle="collapse"
-              data-target="#collapseThree"
-              aria-expanded="false"
-              aria-controls="collapseThree"
-            >
-              Make Biriyani
-            </button>
-          </h2>
+        <div class="card">
+          <div class="card-header" id="headingTwo">
+            <h2 class="mb-0">
+              <button
+                class="btn btn-link collapsed"
+                type="button"
+                data-toggle="collapse"
+                data-target="#collapseTwo"
+                aria-expanded="false"
+                aria-controls="collapseTwo"
+              >
+                Make Todo App
+              </button>
+            </h2>
+          </div>
+          <div
+            id="collapseTwo"
+            class="collapse"
+            aria-labelledby="headingTwo"
+            data-parent="#accordionExample"
+          >
+            <div class="card-body">
+              <p>Assinged To: Musharraf</p>
+              <p>Status: In Progress</p>
+              <p>Due: 04/01/1010</p>
+              <p>
+                Call James, hash out the details and make an awesome application
+              </p>
+            </div>
+          </div>
         </div>
-        <div
-          id="collapseThree"
-          class="collapse"
-          aria-labelledby="headingThree"
-          data-parent="#accordionExample"
-        >
-          <div class="card-body">
-            <p>Assinged To: Musharraf</p>
-            <p>Status: Incomplete</p>
-            <p>Due: 10/12/2020</p>
-            <p>
-              Get the mutton, get the chili, chuck it the oven and make it very
-              spicy!
-            </p>
+        <div class="card">
+          <div class="card-header" id="headingThree">
+            <h2 class="mb-0">
+              <button
+                class="btn btn-link collapsed"
+                type="button"
+                data-toggle="collapse"
+                data-target="#collapseThree"
+                aria-expanded="false"
+                aria-controls="collapseThree"
+              >
+                Make Biriyani
+              </button>
+            </h2>
+          </div>
+          <div
+            id="collapseThree"
+            class="collapse"
+            aria-labelledby="headingThree"
+            data-parent="#accordionExample"
+          >
+            <div class="card-body">
+              <p>Assinged To: Musharraf</p>
+              <p>Status: Incomplete</p>
+              <p>Due: 10/12/2020</p>
+              <p>
+                Get the mutton, get the chili, chuck it the oven and make it
+                very spicy!
+              </p>
+            </div>
           </div>
         </div>
       </div>
     </div>
+    <!-- END ACCORDIAN -->
 
     <!-- old table Start
     <table class="table table-bordered container jumbotron w-25">
@@ -149,62 +267,6 @@
     </table>
 
     old table end -->
-
-    <!-- BEGIN ADD FORM -->
-    <div class="container jumbotron w-50">
-      <form>
-        <div class="form-group">
-          <label for="exampleFormControlInput1">Task Name</label>
-          <input
-            type="text"
-            class="form-control"
-            id="taskName"
-            placeholder="Grocery List"
-          />
-        </div>
-        <div class="form-group">
-          <label for="exampleFormControlInput1">Task Description</label>
-          <input
-            type="text"
-            class="form-control"
-            id="taskDescription"
-            placeholder="Apples, tomatoes, etc..."
-          />
-        </div>
-
-        <div class="form-group">
-          <label for="exampleFormControlInput1">Assigned To:</label>
-          <input
-            type="text"
-            class="form-control"
-            id="taskAssign"
-            placeholder="Bill Gates"
-          />
-        </div>
-
-        <div class="form-group">
-          <label for="exampleFormControlSelect1">Status</label>
-          <select class="form-control" id="taskStatus">
-            <option>Incomplete</option>
-            <option>In Progress</option>
-            <option>Completed</option>
-            <option>Too Lazy To Do It</option>
-            >
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="exampleFormControlInput1">Due Date</label>
-          <input
-            type="text"
-            class="form-control"
-            id="taskDue"
-            placeholder="15/12/2021"
-          />
-        </div>
-      </form>
-    </div>
-
-    <!-- END ADD FORM  -->
 
     <!-- Optional JavaScript; choose one of the two! -->
 
