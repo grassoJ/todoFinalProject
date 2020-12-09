@@ -28,6 +28,7 @@
 
       <!-- Button trigger modal -->
       <button
+        id="addButton"
         type="button"
         class="btn btn-primary mb-5"
         data-toggle="modal"
@@ -71,17 +72,22 @@
                       placeholder="Grocery List"
                     />
                   </div>
+
+                  <!-- Attempt to add text area START -->
+
                   <div class="form-group">
-                    <label for="exampleFormControlInput1"
+                    <label for="exampleFormControlTextarea1"
                       >Task Description</label
                     >
-                    <input
-                      type="text"
+                    <textarea
                       class="form-control"
-                      id="taskDescription"
-                      placeholder="Apples, tomatoes, etc..."
-                    />
+                      id="exampleFormControlTextarea1"
+                      rows="3"
+                      placeholder="I like puppies"
+                    ></textarea>
                   </div>
+
+                  <!-- text area attempt end -->
 
                   <div class="form-group">
                     <label for="exampleFormControlInput1">Assigned To:</label>
@@ -144,7 +150,7 @@
               >
                 Go to zoo
               </button>
-              <button class="btn btn-danger float-right">Deletes</button>
+              <button class="btn btn-danger float-right">Delete</button>
               <button class="btn btn-info float-right mr-2">Edit</button>
             </h2>
           </div>
@@ -159,6 +165,7 @@
               <p>Assigned To: Musharraf</p>
               <p>Status: In Process</p>
               <p>Details: Go to the zoo and laugh at the monkeys</p>
+              <p>Due: 5/1/21</p>
             </div>
           </div>
         </div>
