@@ -4,6 +4,10 @@ h1 {
   margin-top: 150px;
 }
 
+#addButton {
+  margin-left: 286px;
+}
+
 #taskList {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   margin-bottom: 200px;
