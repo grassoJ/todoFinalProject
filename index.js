@@ -36,7 +36,14 @@ function validateInput() {
   const date = newTaskDateInput.value;
 
   const data = [name, descrip, assign, status, date];
+  //start date validation
+  const yearInput = 1 + date[2] + date[3];
+  const monthInput = date[5] + date[6];
+  const dayInput = date[8] + date[9];
+  // alert(date);
+  checkDate(dayInput, monthInput, yearInput);
 
+  //end date validation
   validate(data);
 }
 
@@ -56,21 +63,9 @@ var y = new Date();
 const year = y.getYear();
 
 function checkDate(dayInput, monthInput, yearInput) {
-  if (yearInput <= year && monthInput <= month && dayInput <= day) {
-    alert("please enter valid date");
+  if (yearInput > year) {
+  } else if (yearInput == year && monthInput >= month && dayInput >= day) {
+  } else {
+    alert("past dates are not valid");
   }
-}
-
-//check valid date
-//check status
-
-if (!validFormFieldInput(name)) {
-  errorMessage.innerHTML = "Invalid name input";
-  errorMessage.style.display = "block";
-} else {
-  errorMessage.style.display = "none";
-}
-
-function validFormFieldInput(data) {
-  return data !== null && data !== "";
 }
