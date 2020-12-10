@@ -101,7 +101,11 @@
 
                   <div class="form-group">
                     <label for="exampleFormControlSelect1">Status</label>
-                    <select class="form-control" id="taskStatus">
+                    <select
+                      class="form-control"
+                      id="taskStatus"
+                      placeholder="test"
+                    >
                       <option>Incomplete</option>
                       <option>In Progress</option>
                       <option>Completed</option>
@@ -112,10 +116,12 @@
                   <div class="form-group">
                     <label for="exampleFormControlInput1">Due Date</label>
                     <input
-                      type="text"
+                      type="date"
                       class="form-control"
                       id="taskDue"
-                      placeholder="15/12/2021"
+                      value="2020-07-22"
+                      min="2020-01-01"
+                      max="2021-12-31"
                     />
                   </div>
                 </form>
@@ -124,10 +130,21 @@
               <!-- END ADD FORM  -->
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-danger" data-dismiss="modal">
+              <button
+                type="button"
+                class="btn btn-danger"
+                data-dismiss="modal"
+                onclick="sayHello()"
+              >
                 Cancel
               </button>
-              <button type="button" class="btn btn-primary">Add Task</button>
+              <button
+                type="button"
+                class="btn btn-primary"
+                onclick="validateInput()"
+              >
+                Add Task
+              </button>
             </div>
           </div>
         </div>
@@ -236,42 +253,6 @@
     </div>
     <!-- END ACCORDIAN -->
 
-    <!-- old table Start
-    <table class="table table-bordered container jumbotron w-25">
-      <tbody>
-        <tr>
-          <td
-            class="btn btn-primary dropdown-toggle"
-            type="button"
-            data-toggle="dropdown"
-          >
-            <ul>
-                <li>Name:</li>
-
-            </ul>
-            Grocery Run
-          </td>
-        </tr>
-        <tr>
-          <td>Oil Change</td>
-        </tr>
-        <tr>
-          <td>Workout</td>
-        </tr>
-        <tr>
-          <td>Gardening</td>
-        </tr>
-        <tr>
-          <td>BS assignment</td>
-        </tr>
-      </tbody>
-    </table>
-
-    old table end -->
-
-    <!-- Optional JavaScript; choose one of the two! -->
-
-    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
     <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
       integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
@@ -282,6 +263,9 @@
       integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
       crossorigin="anonymous"
     ></script>
+    <button onclick="myFunction()">JS TEST</button>
+    <!-- javacsript link -->
+    <script src="index.js"></script>
 
     <!-- Option 2: jQuery, Popper.js, and Bootstrap JS
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
