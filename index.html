@@ -36,7 +36,7 @@
         ADD TASK
       </button>
 
-      <!-- Modal -->
+      <!-- ADD TASK Modal -->
       <div
         class="modal fade"
         id="exampleModal"
@@ -149,7 +149,119 @@
         </div>
       </div>
 
-      <!-- END MODAL FOR ADD BUTTON -->
+      <!-- END MODAL FOR ADD TASK-->
+
+      <!-- START MODAL FOR EDIT -->
+      <!-- ADD TASK Modal -->
+      <div
+        class="modal fade"
+        id="editModal"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Edit Task:</h5>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <!-- BEGIN ADD FORM -->
+              <div class="container jumbotron w-50">
+                <form>
+                  <div class="form-group">
+                    <label for="exampleFormControlInput1">Task Name</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="taskName"
+                      placeholder=""
+                    />
+                  </div>
+
+                  <!-- Attempt to add text area START -->
+
+                  <div class="form-group">
+                    <label for="exampleFormControlTextarea1"
+                      >Task Description</label
+                    >
+                    <textarea
+                      class="form-control"
+                      id="exampleFormControlTextarea1"
+                      rows="3"
+                      placeholder=""
+                    ></textarea>
+                  </div>
+
+                  <!-- text area attempt end -->
+
+                  <div class="form-group">
+                    <label for="exampleFormControlInput1">Assigned To:</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="taskAssign"
+                      placeholder=""
+                    />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="exampleFormControlSelect1">Status</label>
+                    <select class="form-control" id="taskStatus" placeholder="">
+                      <option>Incomplete</option>
+                      <option>In Progress</option>
+                      <option>Completed</option>
+                      <option>Too Lazy To Do It</option>
+                      >
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleFormControlInput1">Due Date</label>
+                    <input
+                      type="date"
+                      class="form-control"
+                      id="taskDue"
+                      value="2020-07-22"
+                      min="2020-01-01"
+                      max="2021-12-31"
+                    />
+                  </div>
+                </form>
+              </div>
+
+              <!-- END ADD FORM  -->
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-danger"
+                data-dismiss="modal"
+                onclick="sayHello()"
+              >
+                Cancel
+              </button>
+              <button
+                type="button"
+                class="btn btn-primary"
+                onclick="validateInput()"
+              >
+                Save Changes
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- END MODAL FOR EDIT -->
 
       <!-- //START ACCORDIAN  -->
       <div class="accordion container w-50 mb-5" id="accordionExample">
@@ -165,9 +277,16 @@
                 aria-controls="collapseOne"
               >
                 Go to zoo
+                <!-- //EDIT & DELETE BUTTONS -->
               </button>
               <button class="btn btn-danger float-right">Delete</button>
-              <button class="btn btn-info float-right mr-2">Edit</button>
+              <button
+                class="btn btn-info float-right mr-2"
+                data-toggle="modal"
+                data-target="#editModal"
+              >
+                Edit
+              </button>
             </h2>
           </div>
 
