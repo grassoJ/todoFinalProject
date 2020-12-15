@@ -44,15 +44,39 @@ function validateInput() {
   checkDate(dayInput, monthInput, yearInput);
 
   //end date validation
-  validate(data);
+  // validate(data);
+
+  if (!validate(name)) {
+    innerName();
+  } else {
+    nameMessage.style.display = "none";
+  }
+
+  if (!validate(descrip)) {
+    innerDescription();
+  } else {
+    descriptionMessage.style.display = "none";
+  }
+
+  if (!validate(assign)) {
+    innerAssign();
+  } else {
+    assignMessage.style.display = "none";
+  }
 }
 
-function validate(inputValue) {
-  for (i = 0; i < inputValue.length; i++)
-    if (inputValue[i] === null || inputValue[i] === "") {
-      alert("Fill out all required fields");
-      break;
-    }
+//old validate function, to validate all inputs as an array
+// function validate(inputValue) {
+//   for (i = 0; i < inputValue.length; i++) {
+//     if (inputValue[i] === null || inputValue[i] === "") {
+//       alert("Fill out all required fields");
+//     }
+//     break;
+//   }
+// }
+
+function validate(input) {
+  return input !== null && input !== "";
 }
 
 var m = new Date();
@@ -68,4 +92,25 @@ function checkDate(dayInput, monthInput, yearInput) {
   } else {
     alert("past dates are not valid");
   }
+}
+
+//INNER HTML IS WORKING, SEE ALL BELOW, INTEGRATE THIS WITH VALIDATION FUNCTION
+
+const nameMessage = document.querySelector("#innerName");
+const descriptionMessage = document.querySelector("#innerDescription");
+const assignMessage = document.querySelector("#innerAssign");
+
+function innerName() {
+  nameMessage.innerHTML = "Invalid Name Input";
+  nameMessage.style.display = "block";
+}
+
+function innerDescription() {
+  descriptionMessage.innerHTML = "Invalid Description";
+  descriptionMessage.style.display = "block";
+}
+
+function innerAssign() {
+  assignMessage.innerHTML = "Task Needs to be Assigned";
+  assignMessage.style.display = "block";
 }
