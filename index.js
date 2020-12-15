@@ -40,7 +40,8 @@ function validateInput() {
   const yearInput = 1 + date[2] + date[3];
   const monthInput = date[5] + date[6];
   const dayInput = date[8] + date[9];
-  // alert(date);
+
+  //alert(date);
   checkDate(dayInput, monthInput, yearInput);
 
   //end date validation
@@ -85,6 +86,11 @@ var d = new Date();
 const day = d.getDate();
 var y = new Date();
 const year = y.getYear();
+
+// gets date, puts into correct format, and passes to calendar min and placeholder value
+let today = new Date().toISOString().slice(0, 10);
+document.querySelector("#taskDue").min = today;
+document.querySelector("#taskDue").value = today;
 
 function checkDate(dayInput, monthInput, yearInput) {
   if (yearInput > year) {
