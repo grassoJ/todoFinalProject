@@ -2,21 +2,21 @@ function myFunction() {
   alert("Great Job Musharraf and James!");
 }
 
-// 10 / 12 / 2020;
-
-// if year <=  inputYear
-//    and month <= input Month
-//        and < input day
-// alert- please put a correct date
-
-// let year = new Year();
-// month.getFullYear();
+//create new instance of TaskManager
+const aNewTaskManager = new TaskManager();
+aNewTaskManager.addTask(
+  "puppy time",
+  "play with puppies",
+  "james",
+  "january 5"
+);
 
 function sayHello() {
   alert("your onclick worked! Good job James!");
 }
 
 function validateInput() {
+  console.log("validateINput running");
   //task name
   const newTaskNameInput = document.querySelector("#taskName");
   const name = newTaskNameInput.value;
@@ -64,17 +64,11 @@ function validateInput() {
   } else {
     assignMessage.style.display = "none";
   }
-}
 
-//old validate function, to validate all inputs as an array
-// function validate(inputValue) {
-//   for (i = 0; i < inputValue.length; i++) {
-//     if (inputValue[i] === null || inputValue[i] === "") {
-//       alert("Fill out all required fields");
-//     }
-//     break;
-//   }
-// }
+  //take inputs and add them to new instance of TaskManager (aNewTaskManager)
+  aNewTaskManager.addTask(name, descrip, assign, date);
+  console.log(aNewTaskManager);
+}
 
 function validate(input) {
   return input !== null && input !== "";
@@ -99,6 +93,11 @@ function checkDate(dayInput, monthInput, yearInput) {
     alert("past dates are not valid");
   }
 }
+
+// let testTask = new TaskManager();
+// console.log(testTask);
+
+console.log("console working");
 
 //INNER HTML IS WORKING, SEE ALL BELOW, INTEGRATE THIS WITH VALIDATION FUNCTION
 
