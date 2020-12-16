@@ -64,10 +64,18 @@ function validateInput() {
   } else {
     assignMessage.style.display = "none";
   }
-
   //take inputs and add them to new instance of TaskManager (aNewTaskManager)
-  aNewTaskManager.addTask(name, descrip, assign, date);
-  console.log(aNewTaskManager);
+  function dataToTaskManager() {
+    aNewTaskManager.addTask(name, descrip, assign, date);
+    console.log(aNewTaskManager);
+    // Clear the form
+    newTaskNameInput.value = "";
+    newTaskDescriptionInput.value = "";
+    newTaskAssignedInput.value = "";
+    newTaskDateInput.value = "";
+  }
+  // ATTENTION: code so that this function runs only if all fields are validated;
+  dataToTaskManager();
 }
 
 function validate(input) {
