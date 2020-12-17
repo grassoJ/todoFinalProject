@@ -39,19 +39,22 @@ function validateInput() {
   }
 
   if (!validate(name)) {
-    innerName();
+    nameMessage.innerHTML = "Invalid Name Input";
+    nameMessage.style.display = "block";
   } else {
     nameMessage.style.display = "none";
   }
 
   if (!validate(descrip)) {
-    innerDescription();
+    descriptionMessage.innerHTML = "Invalid Description";
+    descriptionMessage.style.display = "block";
   } else {
     descriptionMessage.style.display = "none";
   }
 
   if (!validate(assign)) {
-    innerAssign();
+    assignMessage.innerHTML = "Task Needs to be Assigned";
+    assignMessage.style.display = "block";
   } else {
     assignMessage.style.display = "none";
   }
@@ -66,7 +69,9 @@ function validateInput() {
     newTaskAssignedInput.value = "";
     newTaskDateInput.value = "";
   }
+
   // BEFORE dataToTaskManager(); IS RUN, WE CHECK THAT ALL FIELDS ARE FILLED
+
   if (validate(name) && validate(descrip) && validate(assign)) {
     dataToTaskManager();
   }
@@ -82,21 +87,6 @@ document.querySelector("#taskDue").value = today;
 const nameMessage = document.querySelector("#innerName");
 const descriptionMessage = document.querySelector("#innerDescription");
 const assignMessage = document.querySelector("#innerAssign");
-
-function innerName() {
-  nameMessage.innerHTML = "Invalid Name Input";
-  nameMessage.style.display = "block";
-}
-
-function innerDescription() {
-  descriptionMessage.innerHTML = "Invalid Description";
-  descriptionMessage.style.display = "block";
-}
-
-function innerAssign() {
-  assignMessage.innerHTML = "Task Needs to be Assigned";
-  assignMessage.style.display = "block";
-}
 
 //Test Functions
 
