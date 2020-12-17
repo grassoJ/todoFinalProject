@@ -1,10 +1,21 @@
-//CREATES A NEW INSTANCE OF TaskManager, AND ADDS A TEST INPUT
+//CREATES A NEW INSTANCE OF TaskManager,
 const aNewTaskManager = new TaskManager();
-aNewTaskManager.addTask(
-  "puppy time",
-  "play with puppies",
-  "james",
-  "january 5"
+
+// A TEST INPUT FOR TASK MANAGER TO CHECK IN THE CONSOLE
+// aNewTaskManager.addTask(
+//   "puppy time",
+//   "play with puppies",
+//   "james",
+//   "january 5"
+// );
+
+//TEST FOR STEP 6, find in console
+const testCreate = createTaskHtml(
+  "Fun Time",
+  "chase butterflies",
+  "jonny",
+  "dec15",
+  "in progress"
 );
 
 //  VALIDATES THAT ALL FIELDS ARE FILLED OUT, AND HAS NESTED FUNCTION dataToTaskManager()
@@ -62,7 +73,7 @@ function validateInput() {
   //take inputs and add them to new instance of TaskManager (aNewTaskManager)
   function dataToTaskManager() {
     aNewTaskManager.addTask(name, descrip, assign, date);
-    console.log(aNewTaskManager);
+    console.log("dataToTaskManager() Running" + aNewTaskManager);
     // Clear the form
     newTaskNameInput.value = "";
     newTaskDescriptionInput.value = "";
@@ -70,19 +81,21 @@ function validateInput() {
     newTaskDateInput.value = "";
   }
 
-  // BEFORE dataToTaskManager(); IS RUN, WE CHECK THAT ALL FIELDS ARE FILLED
+  // BEFORE dataToTaskManager() IS RUN, WE CHECK THAT ALL FIELDS ARE FILLED
 
   if (validate(name) && validate(descrip) && validate(assign)) {
     dataToTaskManager();
   }
-}
+
+  aNewTaskManager.render();
+} // end validateInput()
 
 // gets date, puts into correct format, and passes to calendar min and placeholder value
 let today = new Date().toISOString().slice(0, 10);
 document.querySelector("#taskDue").min = today;
 document.querySelector("#taskDue").value = today;
 
-//INNER HTML IS WORKING, SEE ALL BELOW, INTEGRATE THIS WITH VALIDATION FUNCTION
+//GETS THE ID'S OF WHERE WE'LL PLACE THE INNER HTML ERROR MESSAGES
 
 const nameMessage = document.querySelector("#innerName");
 const descriptionMessage = document.querySelector("#innerDescription");
