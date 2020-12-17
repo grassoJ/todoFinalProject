@@ -1,8 +1,4 @@
-function myFunction() {
-  alert("Great Job Musharraf and James!");
-}
-
-//create new instance of TaskManager
+//CREATES A NEW INSTANCE OF TaskManager, AND ADDS A TEST INPUT
 const aNewTaskManager = new TaskManager();
 aNewTaskManager.addTask(
   "puppy time",
@@ -11,10 +7,11 @@ aNewTaskManager.addTask(
   "january 5"
 );
 
-function sayHello() {
-  alert("your onclick worked! Good job James!");
-}
+//  VALIDATES THAT ALL FIELDS ARE FILLED OUT, AND HAS NESTED FUNCTION dataToTaskManager()
+//THAT COLLECTS INPUTS AND ADDS THEM TO NEW TASKMANAGER INSTANCE
 
+//NEED TO DO: Find add taks button (within form one), make id,
+// make validateInput run with an eventListner on this js file rather than onClick in the html
 function validateInput() {
   console.log("validateINput running");
   //task name
@@ -36,16 +33,10 @@ function validateInput() {
   const date = newTaskDateInput.value;
 
   const data = [name, descrip, assign, status, date];
-  //start date validation
-  const yearInput = 1 + date[2] + date[3];
-  const monthInput = date[5] + date[6];
-  const dayInput = date[8] + date[9];
 
-  //alert(date);
-  checkDate(dayInput, monthInput, yearInput);
-
-  //end date validation
-  // validate(data);
+  function validate(input) {
+    return input !== null && input !== "";
+  }
 
   if (!validate(name)) {
     innerName();
@@ -64,6 +55,7 @@ function validateInput() {
   } else {
     assignMessage.style.display = "none";
   }
+
   //take inputs and add them to new instance of TaskManager (aNewTaskManager)
   function dataToTaskManager() {
     aNewTaskManager.addTask(name, descrip, assign, date);
@@ -75,37 +67,14 @@ function validateInput() {
     newTaskDateInput.value = "";
   }
   // ATTENTION: code so that this function runs only if all fields are validated;
+
   dataToTaskManager();
 }
-
-function validate(input) {
-  return input !== null && input !== "";
-}
-
-var m = new Date();
-const month = m.getMonth();
-var d = new Date();
-const day = d.getDate();
-var y = new Date();
-const year = y.getYear();
 
 // gets date, puts into correct format, and passes to calendar min and placeholder value
 let today = new Date().toISOString().slice(0, 10);
 document.querySelector("#taskDue").min = today;
 document.querySelector("#taskDue").value = today;
-
-function checkDate(dayInput, monthInput, yearInput) {
-  if (yearInput > year) {
-  } else if (yearInput == year && monthInput >= month && dayInput >= day) {
-  } else {
-    alert("past dates are not valid");
-  }
-}
-
-// let testTask = new TaskManager();
-// console.log(testTask);
-
-console.log("console working");
 
 //INNER HTML IS WORKING, SEE ALL BELOW, INTEGRATE THIS WITH VALIDATION FUNCTION
 
@@ -127,3 +96,38 @@ function innerAssign() {
   assignMessage.innerHTML = "Task Needs to be Assigned";
   assignMessage.style.display = "block";
 }
+
+//Test Functions
+
+function sayHello() {
+  alert("your onclick worked! Good job James!");
+}
+
+function myFunction() {
+  alert("Great Job Musharraf and James!");
+}
+
+//old date checker, not required after whiting out past dates
+
+//start date validation, old date validation, not needed after whiting out past dates
+// const yearInput = 1 + date[2] + date[3];
+// const monthInput = date[5] + date[6];
+// const dayInput = date[8] + date[9];
+// checkDate(dayInput, monthInput, yearInput);
+// validate(data);
+//end date validation
+
+// var m = new Date();
+// const month = m.getMonth();
+// var d = new Date();
+// const day = d.getDate();
+// var y = new Date();
+// const year = y.getYear();
+
+// function checkDate(dayInput, monthInput, yearInput) {
+//   if (yearInput > year) {
+//   } else if (yearInput == year && monthInput >= month && dayInput >= day) {
+//   } else {
+//     alert("past dates are not valid");
+//   }
+// }
