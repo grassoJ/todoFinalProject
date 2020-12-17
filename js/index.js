@@ -66,9 +66,10 @@ function validateInput() {
     newTaskAssignedInput.value = "";
     newTaskDateInput.value = "";
   }
-  // ATTENTION: code so that this function runs only if all fields are validated;
-
-  dataToTaskManager();
+  // BEFORE dataToTaskManager(); IS RUN, WE CHECK THAT ALL FIELDS ARE FILLED
+  if (validate(name) && validate(descrip) && validate(assign)) {
+    dataToTaskManager();
+  }
 }
 
 // gets date, puts into correct format, and passes to calendar min and placeholder value
