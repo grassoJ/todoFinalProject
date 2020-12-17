@@ -1,22 +1,22 @@
 //STEP 6,  MAKE A 'CARD' BY PASSING IN PARAMS
 function createTaskHtml(name, description, assignedTo, dueDate, status) {
   return `<div class="card">
-    <div class="card-header" id="createTask">
+    <div class="card-header" id="headingTwo">
       <h2 class="mb-0">
         <button
           class="btn btn-link collapsed"
           type="button"
           data-toggle="collapse"
-          data-target="#collapseTwo"
+          data-target="#collapseNew"
           aria-expanded="false"
-          aria-controls="collapseTwo"
+          aria-controls="collapseNew"
         >
          ${name}
         </button>
       </h2>
     </div>
     <div
-      id="collapseTwo"
+      id="collapseNew"
       class="collapse"
       aria-labelledby="headingTwo"
       data-parent="#accordionExample"
