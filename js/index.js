@@ -111,6 +111,33 @@ function myFunction() {
   alert("Great Job Musharraf and James!");
 }
 
+// Select the Tasks List
+const tasksList = document.querySelector("#tasksList");
+
+//STEP 7 - CREATE AN EVENT LISTENER ON #tasksList in index.html
+tasksList.addEventListener("click", (event) => {
+  // Check if a "Mark As Done" button was clicked
+  if (event.target.classList.contains("done-button")) {
+    // Get the parent Task
+    const parentTask = event.target.parentElement.parentElement;
+    console.log("takslist event is running!");
+    console.log("parentTask = " + parentTask);
+    console.log("parentTask ID " + parentTask.id);
+
+    // Get the taskId of the parent Task.
+    const taskId = Number(parentTask.dataset.taskId);
+
+    // Get the task from the TaskManager using the taskId
+    const task = aNewTaskManager.getTaskById(taskId);
+
+    // Update the task status to 'DONE'
+    task.status = "DONE";
+
+    // Render the tasks
+    aNewTaskManager.render();
+  }
+});
+
 //old date checker, not required after whiting out past dates
 
 //start date validation, old date validation, not needed after whiting out past dates
