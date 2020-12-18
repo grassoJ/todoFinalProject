@@ -1,6 +1,7 @@
 //STEP 6,  MAKE A 'CARD' BY PASSING IN PARAMS
-function createTaskHtml(name, description, assignedTo, dueDate, status) {
-  return `<div class="card">
+function createTaskHtml(id, name, description, assignedTo, dueDate, status) {
+  return `
+  <div class="card">
     <div class="card-header" id="headingTwo">
       <h2 class="mb-0">
         <button
@@ -20,15 +21,18 @@ function createTaskHtml(name, description, assignedTo, dueDate, status) {
       class="collapse"
       aria-labelledby="headingTwo"
       data-parent="#accordionExample"
+      data-task-id=${id}
     >
-      <div class="card-body">
+      <div class="card-body" >
         <p>Assinged To: ${assignedTo}</p>
         <p>Status: ${status} </p>
         <p>Due: ${dueDate}</p>
         <p>Description: ${description}</p>
+        <button type="button" class="btn btn-secondary done-button">
+        DONE</button>
       </div>
     </div>
-  </div>`;
+    </div>`;
 }
 
 class TaskManager {
@@ -67,6 +71,7 @@ class TaskManager {
 
       // Create the task html
       const taskHtml = createTaskHtml(
+        task.id,
         task.name,
         task.description,
         task.assignedTo,
@@ -85,6 +90,21 @@ class TaskManager {
     // Set the inner html of the tasksList on the page
     const tasksList = document.querySelector("#tasksList");
     tasksList.innerHTML = tasksHtml;
+  }
+
+  getTaskById(taskId) {
+    let foundTask;
+    for (let i = 0; i < this.tasks.length; i++) {
+      const task = this.tasks[i];
+
+      // Check if its the right task by comparing the task's id to the id passed as a parameter
+      if (task.id === taskId) {
+        // Store the task in the foundTask variable
+        foundTask = task;
+      }
+    }
+    // Return the found task
+    return foundTask;
   }
 }
 
