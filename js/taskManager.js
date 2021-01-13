@@ -1,6 +1,5 @@
 //STEP 6,  MAKE A 'CARD' BY PASSING IN PARAMS
 function createTaskHtml(id, name, description, assignedTo, dueDate, status) {
-  console.log("new task id " + id);
   return `
   <div class="card">
     <div class="card-header" id="headingTwo">
@@ -44,14 +43,14 @@ class TaskManager {
 
   //on the index.js page: aNewTaskManager.addTask(name, descrip, assign, date);
 
-  addTask(name, description, assignedTo, dueDate) {
+  addTask(name, description, assignedTo, dueDate, status) {
     const task = {
       id: this.currentId++,
       name: name,
       description: description,
       assignedTo: assignedTo,
       dueDate: dueDate,
-      status: "TODO",
+      status: status,
     };
     this.tasks.push(task);
   }
