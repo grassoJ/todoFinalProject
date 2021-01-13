@@ -76,7 +76,7 @@ function validateInput() {
 
   //take inputs and add them to new instance of TaskManager (aNewTaskManager)
   function dataToTaskManager() {
-    aNewTaskManager.addTask(name, descrip, assign, date);
+    aNewTaskManager.addTask(name, descrip, assign, date, status);
     console.log("dataToTaskManager() Running" + aNewTaskManager);
     // Clear the form
     newTaskNameInput.value = "";
