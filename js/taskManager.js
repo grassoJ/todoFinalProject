@@ -1,5 +1,6 @@
 //STEP 6,  MAKE A 'CARD' BY PASSING IN PARAMS
 function createTaskHtml(id, name, description, assignedTo, dueDate, status) {
+  console.log("new task id " + id);
   return `
   <div class="card">
     <div class="card-header" id="headingTwo">
@@ -8,16 +9,16 @@ function createTaskHtml(id, name, description, assignedTo, dueDate, status) {
           class="btn btn-link collapsed"
           type="button"
           data-toggle="collapse"
-          data-target="#collapseNew"
+          data-target="#collapseNew${id}"
           aria-expanded="false"
-          aria-controls="collapseNew"
+          aria-controls="collapseNew${id}"
         >
          ${name}
         </button>
       </h2>
     </div>
     <div
-      id="collapseNew"
+      id="collapseNew${id}"
       class="collapse"
       aria-labelledby="headingTwo"
       data-parent="#accordionExample"
@@ -105,6 +106,25 @@ class TaskManager {
     }
     // Return the found task
     return foundTask;
+  }
+
+  save() {
+    console.log("save() is running!");
+    const tasksJson = JSON.stringify(this.tasks);
+    localStorage.setItem("tasks", tasksJson);
+    const currentId = JSON.stringify(this.currentId);
+    localStorage.setItem("currentId", currentId);
+  }
+
+  load() {
+    if (localStorage.getItem("tasks")) {
+      const tasksJson = localStorage.getItem("tasks");
+      this.tasks = JSON.parse(tasksJson);
+    }
+    if (localStorage.getItem("currentId")) {
+      const currentId = localStorage.getItem("currentId");
+      this.currentId = JSON.parse(currentId);
+    }
   }
 }
 

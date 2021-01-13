@@ -1,6 +1,10 @@
 //CREATES A NEW INSTANCE OF TaskManager,
 const aNewTaskManager = new TaskManager();
 
+// load saved added tasks:
+aNewTaskManager.load();
+aNewTaskManager.render();
+
 // A TEST INPUT FOR TASK MANAGER TO CHECK IN THE CONSOLE
 // aNewTaskManager.addTask(
 //   "puppy time",
@@ -86,6 +90,9 @@ function validateInput() {
   if (validate(name) && validate(descrip) && validate(assign)) {
     dataToTaskManager();
   }
+
+  //save 'tasks' to localStorage
+  aNewTaskManager.save();
 
   aNewTaskManager.render();
 } // end validateInput()
