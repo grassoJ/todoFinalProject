@@ -127,12 +127,14 @@ tasksList.addEventListener("click", (event) => {
   if (event.target.classList.contains("done-button")) {
     // Get the parent Task
     const parentTask = event.target.parentElement.parentElement;
-    console.log("takslist event is running!");
+    console.log("tasklist event is running!");
     console.log("parentTask = " + parentTask);
     console.log("parentTask ID " + parentTask.id);
 
     // Get the taskId of the parent Task.
     const taskId = Number(parentTask.dataset.taskId);
+    console.log("parentTask.dataset: DONe: ", parentTask.dataset);
+    console.log("done button taskId: ", taskId);
 
     // Get the task from the TaskManager using the taskId
     const task = aNewTaskManager.getTaskById(taskId);
@@ -141,6 +143,17 @@ tasksList.addEventListener("click", (event) => {
     task.status = "DONE";
 
     // Render the tasks
+    aNewTaskManager.render();
+  }
+  // make an adventListener for the Delete button
+  if (event.target.classList.contains("delete-button")) {
+    const getParentTask = event.target.parentElement.parentElement;
+    const taskId = Number(getParentTask.dataset.taskId);
+    console.log("getParentTask.dataset: ", getParentTask.dataset);
+    console.log("getParentTask:", getParentTask);
+    console.log("taskId ", getParentTask.dataset.taskId);
+    aNewTaskManager.deleteTask(taskId);
+    aNewTaskManager.save();
     aNewTaskManager.render();
   }
 });

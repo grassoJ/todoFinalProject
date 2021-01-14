@@ -2,7 +2,7 @@
 function createTaskHtml(id, name, description, assignedTo, dueDate, status) {
   return `
   <div class="card">
-    <div class="card-header" id="headingTwo">
+    <div class="card-header" data-task-id=${id} >
       <h2 class="mb-0">
         <button
           class="btn btn-link collapsed"
@@ -14,6 +14,7 @@ function createTaskHtml(id, name, description, assignedTo, dueDate, status) {
         >
          ${name}
         </button>
+        <button class="btn btn-danger delete-button float-right">Delete</button>
       </h2>
     </div>
     <div
@@ -125,7 +126,21 @@ class TaskManager {
       this.currentId = JSON.parse(currentId);
     }
   }
+
+  deleteTask(taskId) {
+    const newTasks = [];
+    for (let i = 0; i < this.tasks.length; i++) {
+      const task = this.tasks[i];
+      if (task.id !== taskId) {
+        newTasks.push(task);
+      }
+    }
+    this.tasks = newTasks;
+  }
 }
+
+//link to test.js
+module.exports = TaskManager;
 
 //TEST new TaskManager to see in console
 
