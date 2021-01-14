@@ -15,6 +15,13 @@ function createTaskHtml(id, name, description, assignedTo, dueDate, status) {
          ${name}
         </button>
         <button class="btn btn-danger delete-button float-right">Delete</button>
+        <button
+                class="btn btn-info float-right mr-2"
+                data-toggle="modal"
+                data-target="#editModal"
+              >
+                Edit
+              </button>
       </h2>
     </div>
     <div

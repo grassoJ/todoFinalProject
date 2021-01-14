@@ -281,114 +281,18 @@
       <!-- //START ACCORDIAN  -->
       <div class="accordion container w-50 mb-5" id="accordionExample">
         <div class="card">
-          <div class="card-header" id="headingOne">
-            <h2 class="mb-0">
-              <button
-                class="btn btn-link"
-                type="button"
-                data-toggle="collapse"
-                data-target="#collapseOne"
-                aria-expanded="true"
-                aria-controls="collapseOne"
-              >
-                Go to zoo
-                <!-- //EDIT & DELETE BUTTONS -->
-              </button>
-              <button class="btn btn-danger float-right">Delete</button>
-              <button
-                class="btn btn-info float-right mr-2"
-                data-toggle="modal"
-                data-target="#editModal"
-              >
-                Edit
-              </button>
-            </h2>
-          </div>
-
           <div
             id="collapseOne"
             class="collapse show"
             aria-labelledby="headingOne"
             data-parent="#accordionExample"
-          >
-            <div class="card-body">
-              <p>Assigned To: Musharraf</p>
-              <p>Status: In Process</p>
-              <p>Details: Go to the zoo and laugh at the monkeys</p>
-              <p>Due: 5/1/21</p>
-            </div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-header" id="headingTwo">
-            <h2 class="mb-0">
-              <button
-                class="btn btn-link collapsed"
-                type="button"
-                data-toggle="collapse"
-                data-target="#collapseTwo"
-                aria-expanded="false"
-                aria-controls="collapseTwo"
-              >
-                Make Todo App
-              </button>
-            </h2>
-          </div>
-          <div
-            id="collapseTwo"
-            class="collapse"
-            aria-labelledby="headingTwo"
-            data-parent="#accordionExample"
-          >
-            <div class="card-body">
-              <p>Assinged To: Musharraf</p>
-              <p>Status: In Progress</p>
-              <p>Due: 04/01/1010</p>
-              <p>
-                Call James, hash out the details and make an awesome application
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-header" id="headingThree">
-            <h2 class="mb-0">
-              <button
-                class="btn btn-link collapsed"
-                type="button"
-                data-toggle="collapse"
-                data-target="#collapseThree"
-                aria-expanded="false"
-                aria-controls="collapseThree"
-              >
-                make Biriyani
-              </button>
-            </h2>
-          </div>
-          <div
-            id="collapseThree"
-            class="collapse"
-            aria-labelledby="headingThree"
-            data-parent="#accordionExample"
-          >
-            <div class="card-body">
-              <p>Assinged To: Musharraf</p>
-              <p>Status: Incomplete</p>
-              <p>Due: 10/12/2020</p>
-              <p>
-                Get the mutton, get the chili, chuck it the oven and make it
-                very spicy!
-              </p>
-            </div>
-          </div>
+          ></div>
         </div>
         <!-- NEW TASK FOR RENDER START -->
         <div class="card" id="tasksList"></div>
-
         <!-- NEW TASK FOR RENDER END -->
       </div>
     </div>
-
     <!-- END ACCORDIAN -->
 
     <script
@@ -401,7 +305,7 @@
       integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
       crossorigin="anonymous"
     ></script>
-    <button onclick="myFunction()">JS TEST</button>
+
     <!-- javacsript link -->
 
     <!-- Option 2: jQuery, Popper.js, and Bootstrap JS
