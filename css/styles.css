@@ -47,7 +47,7 @@ h1:hover {
 
     }
 
-.stories > article {
+.stories> article {
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
         max-width: 300px;
         padding: 2px;
@@ -67,3 +67,11 @@ h1:hover {
     width: 300px;
     opacity: 0.8;
 }
+/* Modal task*/
+/* .accordion {
+background: rgba(0,0,0,0.5);
+  color: white;
+  border-radius: 20px;
+  padding: 20px;
+  margin: 10px;
+} */
