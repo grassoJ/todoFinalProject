@@ -66,6 +66,13 @@ h1:hover {
 .stories > article > img {
     width: 300px;
     opacity: 0.8;
+#addButton {
+  margin-left: 17.9em;
+}
+
+#taskList {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin-bottom: 200px;
 }
 /* Modal task*/
 /* .accordion {

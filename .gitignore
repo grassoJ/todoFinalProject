@@ -1,0 +1,3 @@
+#  can put node_modules in here if you want , prevents from uploading them to github, they may be unecessary
+
+node_modules
