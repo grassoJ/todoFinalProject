@@ -33,7 +33,7 @@ function createTaskHtml(id, name, description, assignedTo, dueDate, status) {
     >
       <div class="card-body" >
         <p>Assinged To: ${assignedTo}</p>
-        <p>Status: ${status} </p>
+        <p id="status${id}">Status: ${status} </p>
         <p>Due: ${dueDate}</p>
         <p>Description: ${description}</p>
         <button type="button" class="btn btn-secondary done-button">

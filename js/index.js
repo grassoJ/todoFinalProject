@@ -110,10 +110,6 @@ const assignMessage = document.querySelector("#innerAssign");
 
 //Test Functions
 
-function sayHello() {
-  alert("your onclick worked! Good job James!");
-}
-
 function myFunction() {
   alert("Great Job Musharraf and James!");
 }
@@ -144,7 +140,9 @@ tasksList.addEventListener("click", (event) => {
 
     // Render the tasks
     aNewTaskManager.render();
+    aNewTaskManager.save();
   }
+
   // make an adventListener for the Delete button
   if (event.target.classList.contains("delete-button")) {
     const getParentTask = event.target.parentElement.parentElement;
@@ -157,6 +155,12 @@ tasksList.addEventListener("click", (event) => {
     aNewTaskManager.render();
   }
 });
+
+function filter() {
+  const filterId = document.querySelector("#filter");
+  const getDemo = document.querySelector("#demo");
+  getDemo.innerHTML = "onchange worked";
+}
 
 //old date checker, not required after whiting out past dates
 
