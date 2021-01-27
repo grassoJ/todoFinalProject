@@ -3,7 +3,8 @@ const aNewTaskManager = new TaskManager();
 
 // load saved added tasks:
 aNewTaskManager.load();
-aNewTaskManager.render();
+let statusValue = "";
+aNewTaskManager.render(statusValue);
 
 // A TEST INPUT FOR TASK MANAGER TO CHECK IN THE CONSOLE
 // aNewTaskManager.addTask(
@@ -94,7 +95,7 @@ function validateInput() {
   //save 'tasks' to localStorage
   aNewTaskManager.save();
 
-  aNewTaskManager.render();
+  aNewTaskManager.render(statusValue);
 } // end validateInput()
 
 // gets date, puts into correct format, and passes to calendar min and placeholder value
@@ -139,7 +140,7 @@ tasksList.addEventListener("click", (event) => {
     task.status = "DONE";
 
     // Render the tasks
-    aNewTaskManager.render();
+    aNewTaskManager.render(statusValue);
     aNewTaskManager.save();
   }
 
@@ -152,16 +153,16 @@ tasksList.addEventListener("click", (event) => {
     console.log("taskId ", getParentTask.dataset.taskId);
     aNewTaskManager.deleteTask(taskId);
     aNewTaskManager.save();
-    aNewTaskManager.render();
+    aNewTaskManager.render(statusValue);
   }
 });
 
-// function filter() {
-//   const filterId = document.querySelector("#filter");
-//   const getDemo = document.querySelector("#demo");
-//   var statusValue = filterId.value;
-//   aNewTaskManager.render();
-// }
+function filter() {
+  const filterId = document.querySelector("#filter");
+  const getDemo = document.querySelector("#demo");
+  statusValue = filterId.value;
+  aNewTaskManager.render(statusValue);
+}
 
 //old date checker, not required after whiting out past dates
 
