@@ -9,6 +9,10 @@ describe("Testing TaskManager Function", () => {
     let len = taskManager.tasks.length;
     assert.strictEqual(len, 1);
   });
+
+  it("Delete Task", () => {
+    const taskManager = new TaskManager();
+  });
 });
 
 // make 3 tests for:  `addTask` - `deleteTask` - `getTaskById`;

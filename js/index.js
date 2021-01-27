@@ -156,11 +156,12 @@ tasksList.addEventListener("click", (event) => {
   }
 });
 
-function filter() {
-  const filterId = document.querySelector("#filter");
-  const getDemo = document.querySelector("#demo");
-  getDemo.innerHTML = "onchange worked";
-}
+// function filter() {
+//   const filterId = document.querySelector("#filter");
+//   const getDemo = document.querySelector("#demo");
+//   var statusValue = filterId.value;
+//   aNewTaskManager.render();
+// }
 
 //old date checker, not required after whiting out past dates
 

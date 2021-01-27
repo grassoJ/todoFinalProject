@@ -67,9 +67,15 @@ class TaskManager {
     // Create an array to store the tasks' HTML
     const tasksHtmlList = [];
 
+    // if (statusValue !== "") {
+    //   alert(statusValue);
+    // }
+
     // Loop over our tasks and create the html, storing it in the array
     for (let i = 0; i < this.tasks.length; i++) {
       // Get the current task in the loop
+
+      // if (this.tasks[i].status.includes(statusValue)) {
       const task = this.tasks[i];
 
       // Format the date
@@ -89,6 +95,7 @@ class TaskManager {
 
       // Push it to the tasksHtmlList array
       tasksHtmlList.push(taskHtml);
+      // }
     }
 
     // Create the tasksHtml by joining each item in the tasksHtmlList

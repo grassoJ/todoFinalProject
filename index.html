@@ -150,17 +150,17 @@
         <label for="exampleFormControlSelect1">Filter:</label>
         <select
           class="form-control"
-          id="#filter"
+          id="filter"
           onchange="filter()"
           placeholder="test"
         >
-          <option>All</option>
-          <option>Todo</option>
-          <option>Completed</option>
+          <option value="">All</option>
+          <option value="Incomplete">To-Do</option>
+          <option value="DONE">Completed</option>
           >
         </select>
       </div>
-      <p id="demo">Hello</p>
+      <!-- <p id="demo">Hello</p>  <--this used for onchange test -->
       <!-- END FILTER DROPDOWN -->
 
       <!-- ADD TASK Modal -->
@@ -247,11 +247,10 @@
                       id="taskStatus"
                       placeholder="test"
                     >
-                      <option>Incomplete</option>
-                      <option>In Progress</option>
-                      <option>Completed</option>
-                      <option>Too Lazy To Do It</option>
-                      >
+                      <option value="TODO">ToDo</option>
+                      <option value="review">Review</option>
+                      <option value="inProgress">In Progress</option>
+                      <option value="DONE">Completed</option>
                     </select>
                   </div>
                   <div class="form-group">
