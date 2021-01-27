@@ -33,7 +33,7 @@ function createTaskHtml(id, name, description, assignedTo, dueDate, status) {
     >
       <div class="card-body" >
         <p>Assinged To: ${assignedTo}</p>
-        <p>Status: ${status} </p>
+        <p id="status${id}">Status: ${status} </p>
         <p>Due: ${dueDate}</p>
         <p>Description: ${description}</p>
         <button type="button" class="btn btn-secondary done-button">
@@ -63,32 +63,43 @@ class TaskManager {
     this.tasks.push(task);
   }
 
-  render() {
+  render(statusValue) {
     // Create an array to store the tasks' HTML
     const tasksHtmlList = [];
+
+    // if (statusValue !== "") {
+    //   alert(statusValue);
+    // }
 
     // Loop over our tasks and create the html, storing it in the array
     for (let i = 0; i < this.tasks.length; i++) {
       // Get the current task in the loop
-      const task = this.tasks[i];
 
-      // Format the date
-      const date = new Date(task.dueDate);
-      const formattedDate =
-        date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear();
+      if (this.tasks[i].status.includes(statusValue)) {
+        const task = this.tasks[i];
 
-      // Create the task html
-      const taskHtml = createTaskHtml(
-        task.id,
-        task.name,
-        task.description,
-        task.assignedTo,
-        formattedDate,
-        task.status
-      );
+        // Format the date
+        const date = new Date(task.dueDate);
+        const formattedDate =
+          date.getDate() +
+          "/" +
+          (date.getMonth() + 1) +
+          "/" +
+          date.getFullYear();
 
-      // Push it to the tasksHtmlList array
-      tasksHtmlList.push(taskHtml);
+        // Create the task html
+        const taskHtml = createTaskHtml(
+          task.id,
+          task.name,
+          task.description,
+          task.assignedTo,
+          formattedDate,
+          task.status
+        );
+
+        // Push it to the tasksHtmlList array
+        tasksHtmlList.push(taskHtml);
+      }
     }
 
     // Create the tasksHtml by joining each item in the tasksHtmlList
