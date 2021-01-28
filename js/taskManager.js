@@ -33,6 +33,20 @@ function createTaskHtml(id, name, description, assignedTo, dueDate, status) {
     >
       <div class="card-body" >
         <p>Assinged To: ${assignedTo}</p>
+        <div class="form-group">
+                    <label for="exampleFormControlSelect1">Status</label>
+                    <select
+                      class="form-control"
+                      id="taskStatus"
+                      placeholder="test"
+                    >
+                      <option>Incomplete</option>
+                      <option>In Progress</option>
+                      <option>Completed</option>
+                      <option>Too Lazy To Do It</option>
+                      >
+                    </select>
+                  </div>
         <p>Status: ${status} </p>
         <p>Due: ${dueDate}</p>
         <p>Description: ${description}</p>
