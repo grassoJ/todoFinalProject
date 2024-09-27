@@ -3,7 +3,8 @@ const aNewTaskManager = new TaskManager();
 
 // load saved added tasks:
 aNewTaskManager.load();
-aNewTaskManager.render();
+let statusValue = "";
+aNewTaskManager.render(statusValue);
 
 // A TEST INPUT FOR TASK MANAGER TO CHECK IN THE CONSOLE
 // aNewTaskManager.addTask(
@@ -94,7 +95,7 @@ function validateInput() {
   //save 'tasks' to localStorage
   aNewTaskManager.save();
 
-  aNewTaskManager.render();
+  aNewTaskManager.render(statusValue);
 } // end validateInput()
 
 // gets date, puts into correct format, and passes to calendar min and placeholder value
@@ -109,10 +110,6 @@ const descriptionMessage = document.querySelector("#innerDescription");
 const assignMessage = document.querySelector("#innerAssign");
 
 //Test Functions
-
-function sayHello() {
-  alert("your onclick worked! Good job James!");
-}
 
 function myFunction() {
   alert("Great Job Musharraf and James!");
@@ -143,8 +140,10 @@ tasksList.addEventListener("click", (event) => {
     task.status = "DONE";
 
     // Render the tasks
-    aNewTaskManager.render();
+    aNewTaskManager.render(statusValue);
+    aNewTaskManager.save();
   }
+
   // make an adventListener for the Delete button
   if (event.target.classList.contains("delete-button")) {
     const getParentTask = event.target.parentElement.parentElement;
@@ -154,9 +153,16 @@ tasksList.addEventListener("click", (event) => {
     console.log("taskId ", getParentTask.dataset.taskId);
     aNewTaskManager.deleteTask(taskId);
     aNewTaskManager.save();
-    aNewTaskManager.render();
+    aNewTaskManager.render(statusValue);
   }
 });
+
+function filter() {
+  const filterId = document.querySelector("#filter");
+  const getDemo = document.querySelector("#demo");
+  statusValue = filterId.value;
+  aNewTaskManager.render(statusValue);
+}
 
 //old date checker, not required after whiting out past dates
 
